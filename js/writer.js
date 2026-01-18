@@ -1,5 +1,3 @@
-import { MESSAGES } from './lang/messages/en/user.js';
-
 //Check if local storage is supported on page load
 window.onload = () => {
     if (typeof(Storage) === "undefined") {
@@ -8,6 +6,15 @@ window.onload = () => {
     }
     loadNotesFromLocalStorage();
 }
+
+//Keeps track of all notes within a 2 second interval
+let notesList = [];
+
+//Set page texts to avoid user facing strings
+document.getElementById('writerPageTitle').innerText = MESSAGES.writerPage;
+document.getElementById('writerPageHeader').innerText = MESSAGES.writerPage;
+document.getElementById('homeBtn').innerText = MESSAGES.homeBtn;
+document.getElementById('addNoteBtn').innerText = MESSAGES.addNoteBtn;
 
 class Note {
     constructor(content, container) {
@@ -44,9 +51,6 @@ class Note {
 
 }
 
-//Keeps track of all notes within a 2 second interval
-let notesList = [];
-
 document.getElementById('addNoteBtn').onclick = () => {
     //Loop through local storage and create new notes
     const notesContainer = document.getElementById('notesContainer');
@@ -67,7 +71,7 @@ function saveNotesToLocalStorage() {
 
 function updateTimestamp(message) {
     const now = new Date().toLocaleTimeString();
-    document.getElementById('timestamp').innerText = `${message} ${now}`;
+    document.getElementById('timeStamp').innerText = `${message} ${now}`;
 }
 
 function loadNotesFromLocalStorage() {

@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Writer Page</title>
-    <link rel="stylesheet" href="style.css">
+    <title id="writerPageTitle"></title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Writer Page</h1>
+    <h1 id="writerPageHeader"></h1>
     <div id="timeStampDisplay">
         <p id="timeStamp"></p>
     </div>
     <div id="btnContainer">
         <a href="index.html">
-            <button id="homeBtn">Go to Home Page</button>
+            <button id="homeBtn"></button>
         </a>
     </div>
-    <button id="addNoteBtn">Add Note</button>
     <div id="notesContainer"></div>
-    <script type="module" src="writer.js"></script>
+    <button id="addNoteBtn"></button>
+    <script src="lang/messages/en/user.js"></script>
+    <script src="js/writer.js"></script>
 </html>
