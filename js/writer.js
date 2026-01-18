@@ -17,6 +17,7 @@ document.getElementById('homeBtn').innerText = MESSAGES.homeBtn;
 document.getElementById('addNoteBtn').innerText = MESSAGES.addNoteBtn;
 
 class Note {
+    //Creates a new note with a textarea and remove button
     constructor(content, container) {
         this.content = content;
         this.container = container; //Div where the notes will be added
@@ -40,6 +41,7 @@ class Note {
         this.container.appendChild(this.removeBtn);
     }
 
+    //Removes corresponding textarea and its contents from local storage
     remove() {
         this.container.removeChild(this.element);
         this.container.removeChild(this.removeBtn);
@@ -51,6 +53,7 @@ class Note {
 
 }
 
+//Add a new note when add note button is clicked
 document.getElementById('addNoteBtn').onclick = () => {
     //Loop through local storage and create new notes
     const notesContainer = document.getElementById('notesContainer');

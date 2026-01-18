@@ -1,3 +1,4 @@
+//User facing strings 
 const MESSAGES = {
     lastSaved: "Last saved on",
     lastRetrieved: "Last retrieved on",
